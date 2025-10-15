@@ -571,19 +571,225 @@
                 <p style="margin-top: 15px; font-size: 1.1rem;">Especialista en reparación y mantenimiento de herramientas eléctricas</p>
             </div>
             
-            <div class="card-body">
-                <div class="services-section" id="servicios">
-                    <h3>Servicios Especializados</h3>
-                    <ul class="services-list">
-                        <li>Reparación y Mantenimiento de Herramienta Eléctrica y Electromecánica</li>
-                        <li>Mecánica General</li>
-                        <li>Soldadura Especializada</li>
-                        <li>Torno y Fresado</li>
-                        <li>Prensa Hidráulica</li>
-                        <li>Oxicorte Profesional</li>
-                        <li>Embobinado de Motores</li>
-                        <li>Mantenimiento Preventivo y Correctivo</li>
-                    </ul>
+            <!-- === INICIO SERVICIOS INTERACTIVOS === -->
+<section class="servicios-interactivos">
+    <div class="servicios-container">
+        <!-- Menú lateral -->
+        <div class="servicios-menu">
+            <h3>Nuestros Servicios</h3>
+            <button class="servicio-btn active" data-target="herramientas">Herramienta Eléctrica</button>
+            <button class="servicio-btn" data-target="mecanica">Mecánica General</button>
+            <button class="servicio-btn" data-target="soldadura">Soldadura</button>
+            <button class="servicio-btn" data-target="torno">Torno y Fresado</button>
+            <button class="servicio-btn" data-target="prensa">Prensa Hidráulica</button>
+            <button class="servicio-btn" data-target="oxicorte">Oxicorte</button>
+            <button class="servicio-btn" data-target="embobinado">Embobinado</button>
+            <button class="servicio-btn" data-target="mantenimiento">Mantenimiento</button>
+        </div>
+
+        <!-- Contenido (SOLO UNO VISIBLE A LA VEZ) -->
+        <div class="servicios-contenido">
+            <div class="contenido-servicio active" id="herramientas">
+                <h2>Herramienta Eléctrica y Electromecánica</h2>
+                <p>¿Sus herramientas no rinden como antes? Nos especializamos en la reparación y mantenimiento de taladros, amoladoras, sierras eléctricas y todo tipo de herramienta electromecánica.</p>
+            </div>
+
+            <div class="contenido-servicio" id="mecanica">
+                <h2>Mecánica General</h2>
+                <p>Ofrecemos soluciones integrales en mecánica de precisión. Desde fabricación de piezas hasta reparación de componentes mecánicos.</p>
+            </div>
+
+            <div class="contenido-servicio" id="soldadura">
+                <h2>Soldadura Especializada</h2>
+                <p>Realizamos soldaduras especializadas (MIG, MAG, TIG, Electrodo) para trabajos que requieren máxima resistencia y calidad.</p>
+            </div>
+
+            <div class="contenido-servicio" id="torno">
+                <h2>Torno y Fresado</h2>
+                <p>Contamos con maquinaria de torno y fresado para dar forma a sus ideas y reparaciones. Trabajamos con diversos materiales.</p>
+            </div>
+
+            <div class="contenido-servicio" id="prensa">
+                <h2>Prensa Hidráulica</h2>
+                <p>Servicio de prensa hidráulica para aplicaciones que requieren gran fuerza: enderezado, ajuste y prensado de componentes.</p>
+            </div>
+
+            <div class="contenido-servicio" id="oxicorte">
+                <h2>Oxicorte Profesional</h2>
+                <p>Corte de metales con limpieza y precisión. Ideal para placas de acero de gran espesor y preparación de bordes.</p>
+            </div>
+
+            <div class="contenido-servicio" id="embobinado">
+                <h2>Embobinado de Motores</h2>
+                <p><strong>¡Nuestro servicio principal!</strong> Expertos en embobinado y reparación de motores eléctricos de cualquier tipo y potencia.</p>
+            </div>
+
+            <div class="contenido-servicio" id="mantenimiento">
+                <h2>Mantenimiento Preventivo y Correctivo</h2>
+                <p>Evite paros inesperados en su producción. Implementamos planes de mantenimiento preventivo y correctivo para sus equipos.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* === ESTILOS SERVICIOS INTERACTIVOS === */
+.servicios-interactivos {
+    margin: 40px 0;
+    padding: 20px 0;
+}
+
+.servicios-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.servicios-menu {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+}
+
+.servicios-menu h3 {
+    color: #1e3c72;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 10px;
+}
+
+.servicio-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    color: #374151;
+}
+
+.servicio-btn:hover {
+    background: #e3f2fd;
+    color: #1e40af;
+    border-left-color: #3b82f6;
+    transform: translateX(5px);
+}
+
+.servicio-btn.active {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    border-left-color: #f59e0b;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    transform: translateX(5px);
+}
+
+.servicios-contenido {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-height: 400px;
+}
+
+.contenido-servicio {
+    display: none;
+}
+
+.contenido-servicio.active {
+    display: block;
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenido-servicio h2 {
+    color: #1e40af;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 15px;
+}
+
+.contenido-servicio p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.contenido-servicio strong {
+    color: #1e40af;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicios-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .servicios-menu {
+        position: relative;
+        top: 0;
+        order: 2;
+    }
+    
+    .servicios-contenido {
+        order: 1;
+        min-height: 300px;
+        padding: 25px;
+    }
+    
+    .contenido-servicio h2 {
+        font-size: 1.5rem;
+    }
+}
+</style>
+
+<script>
+// === JAVASCRIPT SERVICIOS INTERACTIVOS ===
+document.addEventListener('DOMContentLoaded', function() {
+    const botones = document.querySelectorAll('.servicio-btn');
+    const contenidos = document.querySelectorAll('.contenido-servicio');
+    
+    botones.forEach(boton => {
+        boton.addEventListener('click', function() {
+            const objetivo = this.getAttribute('data-target');
+            
+            // Quitar activo de todos
+            botones.forEach(btn => btn.classList.remove('active'));
+            contenidos.forEach(contenido => contenido.classList.remove('active'));
+            
+            // Activar seleccionado
+            this.classList.add('active');
+            document.getElementById(objetivo).classList.add('active');
+        });
+    });
+});
+</script>
+<!-- === FIN SERVICIOS INTERACTIVOS === -->
 
 <!-- ===================== SECCIÓN PRINCIPAL (LOGO PRINCIPAL) ===================== -->
 <section id="principal" class="text-center py-10 bg-white">
@@ -808,5 +1014,6 @@
 </body>
 
 </html>
+
 
 
