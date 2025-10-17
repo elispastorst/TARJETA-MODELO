@@ -32,6 +32,7 @@
             line-height: 1.7;
             min-height: 100vh;
             padding: 0;
+            overflow-x: hidden;
         }
         
         .hero-section {
@@ -41,6 +42,9 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
         
         .hero-section::before {
@@ -75,6 +79,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             text-align: center;
             display: block;
+            line-height: 1.2;
         }
         
         .hero-subtitle {
@@ -402,17 +407,8 @@
                 max-width: 100%;
             }
             
-            .hero-section h1 {
-                text-align: center;
-                width: 100%;
-                margin: 0 auto;
-                line-height: 1.2;
-                word-break: break-word;
-                display: block;
-            }
-
-            .hero-section h1 br {
-                display: block;
+            .hero-section {
+                min-height: 80vh;
             }
         }
     </style>
