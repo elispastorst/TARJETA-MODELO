@@ -1,22 +1,656 @@
-    <!-- QR Share Section -->
-    <section class="section section-light" id="qr-share">
-        <div class="container" style="text-align:center;">
-            <h2 class="section-title">Comparte Nuestra Visión</h2>
-            <p class="section-subtitle">
-                Guarda y comparte nuestro código QR con todos los que puedan beneficiarse de formar parte de 
-                <span class="highlight">Nueva Generación Emprendedora</span>.  
-                ¡Juntos seguimos creciendo y creando oportunidades reales!
-            </p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGE - Nueva Generación Emprendedora | Club Exclusivo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #d69e2e;
+            --gold: #d69e2e;
+            --success: #38a169;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --text: #2d3748;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;  /* AÑADE ESTO */
+    display: block;      /* Y ESTO */
+}
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(214, 158, 46, 0.4);
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.6);
+            background: #ecc94b;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .section-light {
+            background: white;
+        }
+        
+        .section-dark {
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--gold);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            color: var(--secondary);
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            height: 100%;
+            border-top: 5px solid var(--gold);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .card-content {
+            color: var(--secondary);
+            text-align: center;
+        }
+        
+        .method-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            border: 2px solid var(--gold);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin: 20px 0 15px;
+            color: var(--primary);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin: 30px 0;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .final-cta {
+            background: var(--gradient);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        .highlight {
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .method-steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                width: 100%;
+                max-width: 100%;
+            }
+        }.step {
+    width: 100%;
+    max-width: 100%;
+}
 
-            <div style="margin-top:40px;">
-                <img src="https://github.com/elispastorst/nuevageneracionemprendedora/blob/e68b8c77b46930b386bb8df21b88351c2e564a50/QR%20DE%20LA%20PAGINA%20NGE.png?raw=true" 
-                     alt="Código QR NGE"
-                     style="max-width:240px; border:6px solid var(--gold); border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.15);">
+@media (max-width: 768px) {
+    .hero-section h1 {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        line-height: 1.2;
+        word-break: break-word;
+        display: block;
+    }
+
+    .hero-section h1 br {
+        display: block; /* mantiene el salto natural */
+    }
+}
+
+
+</style>
+</head>
+<body>
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
             </div>
-
-            <p style="margin-top:25px; font-size:1.1rem; color:var(--secondary);">
-                Escanéalo, guárdalo o compártelo con tus amigos.  
-                <span class="highlight">Tu invitación puede cambiar una vida.</span>
-            </p>
+<h1>NUEVA GENERACIÓN<br>EMPRENDEDORA</h1>       
+            <p class="hero-subtitle">El primer club de emprendedores donde tu éxito es nuestro compromiso. No solo te ofrecemos una oportunidad, te brindamos un camino probado hacia tu libertad financiera.</p>
+            <a href="#unete" class="cta-button">ÚNETE AL CLUB EXCLUSIVO</a>
+            <div class="guarantee-badge">MÉTODO COMPROBADO DESDE 2008</div>
         </div>
     </section>
+
+    <!-- Problem Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">¿Cansado de Oportunidades que no Cumplen?</h2>
+            <p class="section-subtitle">La mayoría de "oportunidades" te piden grandes inversiones, ventas complicadas o reclutamientos masivos. Nosotros CAMBIAMOS EL PARADIGMA.</p>
+            
+            <div class="benefits-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="card-title">Apoyo Real</h3>
+                    <p class="card-content">No estás solo. Te acompañamos paso a paso con seguimiento personalizado DONDE ESTAS CON TODOS LOS EMPRENDEDORES NUEVA GENERACION.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="card-title">Riesgo Cero</h3>
+                    <p class="card-content">Solo <span class="highlight">$2 USD</span> de inversión inicial. Sin cuotas mensuales, sin gastos ocultos.</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Método Comprobado</h3>
+                    <p class="card-content">Sistema matemático de <span class="highlight">4x7 niveles</span> que funciona desde 2008 con Emprende World.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="section section-dark" id="metodo">
+        <div class="container">
+            <h2 class="section-title">El Método que Cambia Todo</h2>
+            <p class="section-subtitle">Simple, claro y accesible para cualquier persona con determinación</p>
+            
+            <div class="method-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Inversión Simbólica</h3>
+                    <p>Único aporte de <span class="highlight">$2 USD</span>. Sin mensualidades, sin compromisos ocultos.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Persuade a 4 Personas</h3>
+                    <p>Comparte la oportunidad con 4 personas de tu confianza. No necesitas ser un vendedor experto.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Enseña el Método</h3>
+                    <p>Asegúrate de que tus 4 directos comprendan que su misión es conseguir sus propios 4.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Crecimiento Exponencial</h3>
+                    <p>Observa cómo 4 se convierten en 16, luego en 64, y así hasta 7 niveles de crecimiento.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <div class="guarantee-badge">PLATAFORMA LEGAL DESDE 2008</div>
+                <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Emprende World es una plataforma seria y legal que lleva más de una década ayudando a personas como tú a alcanzar sus metas financieras.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Por qué NGE es Diferente</h2>
+            <p class="section-subtitle">No somos otro programa multinivel. Somos un club de emprendedores con valores.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Comunidad Exclusiva</h3>
+                    <p>Solo personas comprometidas con su crecimiento. Ambiente de apoyo mutuo y colaboración.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Capacitación Continua</h3>
+                    <p>Estrategias probadas, material de apoyo y mentoría para que tengas éxito.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Transparencia Total</h3>
+                    <p>Sin letras pequeñas, sin sorpresas. Sabes exactamente en qué te estás metiendo.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Resultados Reales</h3>
+                    <p>Método matemático que garantiza crecimiento si sigues los pasos correctamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Lo que Dicen Nuestros Miembros</h2>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Llevaba años buscando una oportunidad real. Con NGE encontré no solo un ingreso extra, sino una comunidad que me apoya y me motiva a crecer. El método es tan simple que cualquiera puede hacerlo."</p>
+                <p class="testimonial-author">- Carlos M., Miembro desde 2022</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Lo que más valoro de NGE es la transparencia. Desde el primer día supe exactamente lo que tenía que hacer y los resultados llegaron más rápido de lo que esperaba. El apoyo del club es increíble."</p>
+                <p class="testimonial-author">- Ana L., Miembro desde 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">¿Es esto una estafa o esquema piramidal?</h3>
+                <p>Absolutamente no. Los esquemas piramidales colapsan porque requieren reclutamiento infinito. Nuestro método tiene un límite matemático (7 niveles) y está respaldado por una plataforma legal con más de 15 años en el mercado.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">¿Realmente solo necesito $2 USD?</h3>
+                <p>Sí, es el único aporte requerido. No hay cuotas mensuales, ni compras obligatorias de productos. Los $2 USD son simbólicos y representan tu compromiso con el proceso.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">¿Qué pasa si no consigo a 4 personas?</h3>
+                <p>Te apoyamos con estrategias probadas para encontrar a esas 4 personas. La mayoría tiene al menos 4 amigos o familiares en quienes confiar. Además, nuestro equipo te brinda herramientas y capacitación para lograrlo.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">¿Cuánto tiempo toma ver resultados?</h3>
+                <p>Depende de tu dedicación, pero muchos miembros ven sus primeros ingresos en las primeras semanas. El crecimiento se acelera exponencialmente una vez que tu red comienza a expandirse.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="unete">
+        <div class="container">
+            <h2>Tu Momento es Ahora</h2>
+            <p>Miles de personas ya descubrieron el poder de este método. No dejes que la duda te impida alcanzar lo que mereces.</p>
+            <a href="#unete" class="cta-button">INICIAR MI VIAJE A LA LIBERTAD FINANCIERA</a>
+            <div style="margin-top: 20px;">
+                <div class="guarantee-badge">COMPROMISO: ACOMPAÑAMIENTO HASTA QUE LOGRES TUS METAS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+            </div>
+            <h3 style="margin-bottom: 20px;">NUEVA GENERACIÓN EMPRENDEDORA</h3>
+            <p>El club donde tu éxito es nuestra misión</p>
+            
+            <div class="footer-links">
+                <a href="#metodo">El Método</a>
+                <a href="#unete">Únete</a>
+                <a href="#">Contacto</a>
+                <a href="#">Términos</a>
+                <a href="#">Privacidad</a>
+            </div>
+            
+            <p class="copyright">© 2024 Nueva Generación Emprendedora. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card, .step, .benefit, .testimonial').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
