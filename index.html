@@ -6,6 +6,7 @@
     <title>NGE - Nueva Generación Emprendedora | Club Exclusivo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Reset y configuración base */
         * {
             margin: 0;
             padding: 0;
@@ -35,6 +36,15 @@
             overflow-x: hidden;
         }
         
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        
+        /* Hero Section */
         .hero-section {
             background: var(--gradient);
             color: white;
@@ -45,6 +55,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         
         .hero-section::before {
@@ -56,14 +67,6 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
             background-size: cover;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
         }
         
         .logo {
@@ -78,7 +81,6 @@
             font-weight: 800;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             text-align: center;
-            display: block;
             line-height: 1.2;
         }
         
@@ -111,8 +113,21 @@
             background: #ecc94b;
         }
         
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        /* Secciones generales */
         .section {
             padding: 80px 20px;
+            width: 100%;
         }
         
         .section-light {
@@ -149,6 +164,7 @@
             color: var(--secondary);
         }
         
+        /* Cards y grids */
         .card {
             background: white;
             border-radius: 15px;
@@ -157,6 +173,7 @@
             transition: transform 0.3s ease;
             height: 100%;
             border-top: 5px solid var(--gold);
+            width: 100%;
         }
         
         .card:hover {
@@ -182,12 +199,22 @@
             text-align: center;
         }
         
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            width: 100%;
+        }
+        
+        /* Método steps */
         .method-steps {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
             margin-top: 50px;
+            width: 100%;
         }
         
         .step {
@@ -226,13 +253,7 @@
             color: var(--primary);
         }
         
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
+        /* Beneficios */
         .benefit {
             background: white;
             border-radius: 15px;
@@ -240,6 +261,7 @@
             box-shadow: var(--shadow);
             text-align: center;
             transition: transform 0.3s ease;
+            width: 100%;
         }
         
         .benefit:hover {
@@ -252,6 +274,7 @@
             margin-bottom: 20px;
         }
         
+        /* Testimonios */
         .testimonial {
             background: white;
             border-radius: 15px;
@@ -259,6 +282,7 @@
             box-shadow: var(--shadow);
             margin: 30px 0;
             border-left: 5px solid var(--gold);
+            width: 100%;
         }
         
         .testimonial-text {
@@ -273,12 +297,14 @@
             color: var(--primary);
         }
         
+        /* FAQ */
         .faq-item {
             background: white;
             border-radius: 10px;
             padding: 25px;
             margin-bottom: 20px;
             box-shadow: var(--shadow);
+            width: 100%;
         }
         
         .faq-question {
@@ -288,6 +314,51 @@
             color: var(--primary);
         }
         
+        /* QR Section - CORREGIDA */
+        .qr-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            margin: 30px auto;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .qr-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            border: 2px dashed var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .qr-placeholder {
+            color: var(--secondary);
+            font-size: 1rem;
+            text-align: center;
+        }
+        
+        .qr-instructions {
+            margin-top: 20px;
+            color: var(--secondary);
+            max-width: 500px;
+        }
+        
+        /* Final CTA */
         .final-cta {
             background: var(--gradient);
             color: white;
@@ -296,6 +367,7 @@
             border-radius: 20px;
             margin: 50px 0;
             box-shadow: var(--shadow);
+            width: 100%;
         }
         
         .final-cta h2 {
@@ -310,11 +382,13 @@
             opacity: 0.9;
         }
         
+        /* Footer */
         footer {
             background: var(--primary);
             color: white;
             padding: 50px 20px;
             text-align: center;
+            width: 100%;
         }
         
         .footer-links {
@@ -346,44 +420,7 @@
             font-weight: bold;
         }
         
-        .guarantee-badge {
-            display: inline-block;
-            background: var(--success);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        
-        .qr-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin: 30px auto;
-            max-width: 600px;
-        }
-        
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background: #f5f5f5;
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            border: 2px dashed var(--gold);
-        }
-        
-        .qr-placeholder {
-            color: var(--secondary);
-            font-size: 1rem;
-        }
-        
+        /* Responsive */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
@@ -409,6 +446,41 @@
             
             .hero-section {
                 min-height: 80vh;
+                padding: 60px 20px;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .qr-code {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 15px;
+            }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
@@ -588,20 +660,22 @@
         </div>
     </section>
 
-    <!-- QR Share Section -->
+    <!-- QR Share Section - CORREGIDA -->
     <section class="section section-light" id="qr-share">
         <div class="container">
             <h2 class="section-title">Comparte Esta Oportunidad</h2>
             <p class="section-subtitle">Escanea este código QR para compartir esta oportunidad con tus contactos</p>
             
             <div class="qr-section">
-                <div class="qr-code">
-                    <div class="qr-placeholder">
-                        <i class="fas fa-qrcode" style="font-size: 3rem; color: var(--gold); margin-bottom: 10px;"></i>
-                        <p>Código QR</p>
+                <div class="qr-container">
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode" style="font-size: 3rem; color: var(--gold); margin-bottom: 10px;"></i>
+                            <p>Código QR</p>
+                        </div>
                     </div>
+                    <p class="qr-instructions">Comparte este código con amigos y familiares para invitarlos a unirse a nuestra comunidad</p>
                 </div>
-                <p>Comparte este código con amigos y familiares para invitarlos a unirse a nuestra comunidad</p>
             </div>
         </div>
     </section>
