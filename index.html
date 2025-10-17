@@ -374,7 +374,36 @@
                 width: 100%;
                 max-width: 100%;
             }
-        }
+        }.step {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* 🔽 Agrega esto justo antes de </style> */
+@media (max-width: 768px) {
+    h1 {
+        text-align: center;
+        display: inline-block;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    h1 br {
+        display: none; /* Oculta el salto de línea fijo */
+    }
+
+    h1::after {
+        content: "\AEMPRENDEDORA";
+        white-space: pre;
+        display: block;
+    }
+}
+/* 🔼 Aquí termina tu bloque nuevo */
+
+</style>
+</head>
+<body>
+
     </style>
 </head>
 <body>
@@ -625,5 +654,6 @@
     </script>
 </body>
 </html>
+
 
 
