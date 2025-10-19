@@ -3,773 +3,434 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGE - Nueva Generación Emprendedora | Club Exclusivo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Tu Tarjeta Digital - Revoluciona Tu Forma de Conectar</title>
     <style>
-        /* Reset y configuración base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
         }
         
-        :root {
-            --primary: #1a365d;
-            --secondary: #2d3748;
-            --accent: #d69e2e;
-            --gold: #d69e2e;
-            --success: #38a169;
-            --light: #f7fafc;
-            --dark: #2d3748;
-            --text: #2d3748;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --gradient: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            color: var(--text);
-            line-height: 1.7;
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #333;
+            line-height: 1.6;
             min-height: 100vh;
-            padding: 0;
-            overflow-x: hidden;
         }
-        
-        /* Contenedor principal */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
+
+        .container { 
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding: 15px; 
         }
-        
-        /* Hero Section */
-        .hero-section {
-            background: var(--gradient);
-            color: white;
-            padding: 80px 20px;
+
+        /* Header mejorado con imagen */
+        header {
             text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
-            min-height: 100vh;
+        }
+
+        .header-image {
+            width: 100%;
+            max-width: 400px;
+            height: 200px;
+            background: linear-gradient(135deg, #1e3c72, #25D366);
+            border-radius: 15px;
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
-            background-size: cover;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--gold);
-        }
-        
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            text-align: center;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--primary);
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(214, 158, 46, 0.4);
-            margin: 10px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.6);
-            background: #ecc94b;
-        }
-        
-        .guarantee-badge {
-            display: inline-block;
-            background: var(--success);
             color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
             font-weight: bold;
-            margin: 10px 0;
-        }
-        
-        /* Secciones generales */
-        .section {
-            padding: 80px 20px;
-            width: 100%;
-        }
-        
-        .section-light {
-            background: white;
-        }
-        
-        .section-dark {
-            background: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: var(--gold);
-            margin: 15px auto;
-            border-radius: 2px;
-        }
-        
-        .section-subtitle {
-            text-align: center;
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            color: var(--secondary);
         }
-        
-        /* Cards y grids */
-        .card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px 30px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            height: 100%;
-            border-top: 5px solid var(--gold);
-            width: 100%;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .card-icon {
-            font-size: 3rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .card-title {
-            font-size: 1.5rem;
+
+        h1 {
+            font-size: 2rem;
             margin-bottom: 15px;
-            color: var(--primary);
+            color: #1e3c72;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* Alert de urgencia */
+        .alert {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        /* NUEVA SECCIÓN: BENEFICIOS ÉPICOS */
+        .benefits-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin: 30px 0;
             text-align: center;
         }
-        
-        .card-content {
-            color: var(--secondary);
-            text-align: center;
+
+        .benefits-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
         }
-        
+
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-            width: 100%;
-        }
-        
-        /* Método steps */
-        .method-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            width: 100%;
-        }
-        
-        .step {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            text-align: center;
-            position: relative;
-            border: 2px solid var(--gold);
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .step-title {
-            font-size: 1.3rem;
-            margin: 20px 0 15px;
-            color: var(--primary);
-        }
-        
-        /* Beneficios */
-        .benefit {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: transform 0.3s ease;
-            width: 100%;
-        }
-        
-        .benefit:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-        }
-        
-        /* Testimonios */
-        .testimonial {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            margin: 30px 0;
-            border-left: 5px solid var(--gold);
-            width: 100%;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        /* FAQ */
-        .faq-item {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            width: 100%;
-        }
-        
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        /* QR Section - CORREGIDA */
-        .qr-section {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin: 30px auto;
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        .qr-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            border: 2px dashed var(--gold);
-            margin-bottom: 20px;
-        }
-        
-        .qr-placeholder {
-            color: var(--secondary);
-            font-size: 1rem;
-            text-align: center;
-        }
-        
-        .qr-instructions {
-            margin-top: 20px;
-            color: var(--secondary);
-            max-width: 500px;
-        }
-        
-        /* Final CTA */
-        .final-cta {
-            background: var(--gradient);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            border-radius: 20px;
-            margin: 50px 0;
-            box-shadow: var(--shadow);
-            width: 100%;
-        }
-        
-        .final-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .final-cta p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.9;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            grid-template-columns: 1fr;
             gap: 20px;
             margin: 30px 0;
         }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
+
+        .benefit-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #25D366;
+            text-align: left;
         }
-        
-        .footer-links a:hover {
-            color: var(--gold);
+
+        .benefit-card h3 {
+            margin-bottom: 12px;
+            color: #1e3c72;
+            font-size: 1.2rem;
         }
-        
-        .copyright {
-            margin-top: 30px;
-            opacity: 0.7;
-            font-size: 0.9rem;
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95rem;
         }
-        
-        .highlight {
-            color: var(--gold);
+
+        /* NUEVA SECCIÓN: CÓDIGO QR */
+        .qr-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .qr-container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #f5f5f5;
+            border: 2px dashed #25D366;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
             font-weight: bold;
         }
-        
+
+        .qr-instructions {
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Features mejoradas */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #25D366;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            color: #1e3c72;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Caso de éxito */
+        .testimonial {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            border: 2px dashed #25D366;
+        }
+
+        /* CTA mejorado */
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 15px auto;
+            padding: 18px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp { 
+            background: #25D366; 
+            color: white; 
+        }
+
+        .demo { 
+            background: #1e3c72; 
+            color: white; 
+        }
+
+        .premium {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            color: white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
+            .container {
+                max-width: 700px;
+                padding: 20px;
+            }
+            
             h1 {
                 font-size: 2.5rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .method-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .step {
-                width: 100%;
-                max-width: 100%;
-            }
-            
-            .hero-section {
-                min-height: 80vh;
-                padding: 60px 20px;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .qr-code {
-                width: 180px;
-                height: 180px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
+            .features, .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .cta-button {
-                padding: 15px 30px;
-                font-size: 1rem;
+                display: inline-block;
+                width: auto;
+                margin: 10px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1000px;
             }
             
-            .section {
-                padding: 60px 15px;
-            }
-            
-            .qr-code {
-                width: 150px;
-                height: 150px;
+            .features, .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TU_ID_AQUI"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2K199E34HV');
+    </script>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-crown"></i>
+    <div class="container">
+        <header>
+            <!-- ESPACIO PARA TU IMAGEN DE PORTADA -->
+            <div class="header-image">
+                [TU IMAGEN DE PORTADA AQUÍ]
             </div>
-            <h1>NUEVA GENERACIÓN<br>EMPRENDEDORA</h1>       
-            <p class="hero-subtitle">El primer club de emprendedores donde tu éxito es nuestro compromiso. No solo te ofrecemos una oportunidad, te brindamos un camino probado hacia tu libertad financiera.</p>
-            <a href="#unete" class="cta-button">ÚNETE AL CLUB EXCLUSIVO</a>
-            <div class="guarantee-badge">MÉTODO COMPROBADO DESDE 2008</div>
-        </div>
-    </section>
+            
+            <h1>¿Tu Comunidad Digital Podría Desaparecer Mañana Mismo?</h1>
+            <p class="subtitle">YouTube, Instagram y TikTok pueden cerrar tu cuenta en segundos... y perderías todo.</p>
+            
+            <div class="alert">
+                ⚠️ <strong>NO DEPENDAS MÁS DE PLATAFORMAS</strong> que controlan tu destino
+            </div>
+        </header>
 
-    <!-- Problem Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">¿Cansado de Oportunidades que no Cumplen?</h2>
-            <p class="section-subtitle">La mayoría de "oportunidades" te piden grandes inversiones, ventas complicadas o reclutamientos masivos. Nosotros CAMBIAMOS EL PARADIGMA.</p>
+        <!-- NUEVA SECCIÓN: BENEFICIOS ÉPICOS -->
+        <section class="benefits-section">
+            <h2>🚀 LA REVOLUCIÓN DIGITAL HA LLEGADO</h2>
+            <p>Tu tarjeta digital no es solo un contacto... es tu MINI-SITIO WEB personal con superpoderes</p>
             
             <div class="benefits-grid">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <h3 class="card-title">Apoyo Real</h3>
-                    <p class="card-content">No estás solo. Te acompañamos paso a paso con seguimiento personalizado DONDE ESTAS CON TODOS LOS EMPRENDEDORES NUEVA GENERACION.</p>
+                <div class="benefit-card">
+                    <h3>📱 NUNCA MÁS TE QUEDARÁS SIN TARJETAS</h3>
+                    <p>Olvídate de imprimir, perder o quedarte sin tarjetas. Tu tarjeta digital vive en tu celular y se comparte EN SEGUNDOS.</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="card-title">Riesgo Cero</h3>
-                    <p class="card-content">Solo <span class="highlight">$2 USD</span> de inversión inicial. Sin cuotas mensuales, sin gastos ocultos.</p>
+                <div class="benefit-card">
+                    <h3>🎬 CATÁLOGOS Y VIDEOS EN TU TARJETA</h3>
+                    <p>Muestra tus productos, servicios o talento con imágenes, videos y enlaces directos. ¡Convierte tu tarjeta en tu mejor vendedor!</p>
                 </div>
                 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="card-title">Método Comprobado</h3>
-                    <p class="card-content">Sistema matemático de <span class="highlight">4x7 niveles</span> que funciona desde 2008 con Emprende World.</p>
+                <div class="benefit-card">
+                    <h3>💸 GENERA INGRESOS AUTOMÁTICOS</h3>
+                    <p>Vinculada con EMPRENDE WORLD: cada tarjeta puede generar comisiones por referidos y ventas. ¡Ganas tú y ganan tus clientes!</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🔄 ACTUALIZACIÓN INSTANTÁNEA</h3>
+                    <p>¿Cambiaste de número? ¿Nuevo servicio? Actualiza UNA VEZ y todos tus contactos tendrán tu información actualizada AL INSTANTE.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>🌐 TU MINI-WEBSITE PERSONAL</h3>
+                    <p>Más que una tarjeta: es tu presencia digital completa. Incluye redes sociales, sitios web, promociones y MUCHO MÁS.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>✅ AUTORIZADO POR EMPRENDE WORLD</h3>
+                    <p>Usa la misma plataforma que impulsa a cientos de emprendedores. Totalmente compatible y aprobado por los administradores.</p>
+                </div>
+                
+                <!-- NUEVA VENTAJA COMPETITIVA -->
+                <div class="benefit-card" style="border-left-color: #ff6b6b;">
+                    <h3>⚡ VENTAJA COMPETITIVA INMEDIATA</h3>
+                    <p><strong>Ya no es opción, es NECESIDAD:</strong> En un mundo donde el 90% busca todo con su teléfono, quienes no estén digitalizados DESAPARECERÁN. Sé pionero y domina el futuro.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Method Section -->
-    <section class="section section-dark" id="metodo">
-        <div class="container">
-            <h2 class="section-title">El Método que Cambia Todo</h2>
-            <p class="section-subtitle">Simple, claro y accesible para cualquier persona con determinación</p>
+        <!-- NUEVA SECCIÓN: CÓDIGO QR -->
+        <section class="qr-section">
+            <h2>📲 COMPARTE ESTA REVOLUCIÓN DIGITAL</h2>
+            <p>Escanea el código QR y comparte esta oportunidad con tus contactos</p>
             
-            <div class="method-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Inversión Simbólica</h3>
-                    <p>Único aporte de <span class="highlight">$2 USD</span>. Sin mensualidades, sin compromisos ocultos.</p>
+            <div class="qr-container">
+                <div class="qr-placeholder">
+                    [TU CÓDIGO QR AQUÍ]
                 </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Persuade a 4 Personas</h3>
-                    <p>Comparte la oportunidad con 4 personas de tu confianza. No necesitas ser un vendedor experto.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Enseña el Método</h3>
-                    <p>Asegúrate de que tus 4 directos comprendan que su misión es conseguir sus propios 4.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Crecimiento Exponencial</h3>
-                    <p>Observa cómo 4 se convierten en 16, luego en 64, y así hasta 7 niveles de crecimiento.</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <div class="guarantee-badge">PLATAFORMA LEGAL DESDE 2008</div>
-                <p style="margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    Emprende World es una plataforma seria y legal que lleva más de una década ayudando a personas como tú a alcanzar sus metas financieras.
+                <h3>¡Comparte la Revolución Digital!</h3>
+                <p class="qr-instructions">
+                    <strong>Instrucciones:</strong><br>
+                    1. Toma una captura de este código QR<br>
+                    2. Compártelo en tus redes sociales<br>
+                    3. Envía a tus contactos por WhatsApp<br>
+                    4. ¡Sé parte del cambio digital!
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Benefits Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">Por qué NGE es Diferente</h2>
-            <p class="section-subtitle">No somos otro programa multinivel. Somos un club de emprendedores con valores.</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3>Comunidad Exclusiva</h3>
-                    <p>Solo personas comprometidas con su crecimiento. Ambiente de apoyo mutuo y colaboración.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Capacitación Continua</h3>
-                    <p>Estrategias probadas, material de apoyo y mentoría para que tengas éxito.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Transparencia Total</h3>
-                    <p>Sin letras pequeñas, sin sorpresas. Sabes exactamente en qué te estás metiendo.</p>
-                </div>
-                
-                <div class="benefit">
-                    <div class="benefit-icon">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3>Resultados Reales</h3>
-                    <p>Método matemático que garantiza crecimiento si sigues los pasos correctamente.</p>
-                </div>
+        <section class="features">
+            <div class="feature-card">
+                <h3>🏠 Tu Casa Digital Propia</h3>
+                <p><strong>Dominio personal + hosting profesional.</strong> Tu comunidad te encuentra DIRECTAMENTE, sin algoritmos de por medio.</p>
             </div>
-        </div>
-    </section>
+            
+            <div class="feature-card">
+                <h3>💰 Tu Comunidad Gana Contigo</h3>
+                <p><strong>Sistema de ingresos compartidos:</strong> Tus seguidores ganan registrándose y tú recibes comisiones automáticas.</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🛡️ Protección Total</h3>
+                <p><strong>Cero riesgo de bloqueos.</strong> Tu contenido y comunidad están seguros en tu propio espacio digital.</p>
+            </div>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="section section-dark">
-        <div class="container">
-            <h2 class="section-title">Lo que Dicen Nuestros Miembros</h2>
-            
-            <div class="testimonial">
-                <p class="testimonial-text">"Llevaba años buscando una oportunidad real. Con NGE encontré no solo un ingreso extra, sino una comunidad que me apoya y me motiva a crecer. El método es tan simple que cualquiera puede hacerlo."</p>
-                <p class="testimonial-author">- Carlos M., Miembro desde 2025</p>
-            </div>
-            
-            <div class="testimonial">
-                <p class="testimonial-text">"Lo que más valoro de NGE es la transparencia. Desde el primer día supe exactamente lo que tenía que hacer y los resultados llegaron más rápido de lo que esperaba. El apoyo del club es increíble."</p>
-                <p class="testimonial-author">- Ana L., Miembro desde 2025</p>
-            </div>
+        <div class="testimonial">
+            "Perdí 50K seguidores en Instagram por un bloqueo injusto. Ahora tengo mi sitio propio y mi comunidad está más unida que nunca."
+            <br><strong>- Carlos M., Creador de Contenido</strong>
         </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
+        <section class="cta-section">
+            <h2>Tu Momento de Cambio es HOY</h2>
+            <p>Más de 200 creadores y emprendedores ya tienen su tarjeta digital épica</p>
             
-            <div class="faq-item">
-                <h3 class="faq-question">¿Es esto una estafa o esquema piramidal?</h3>
-                <p>Absolutamente no. Los esquemas piramidales colapsan porque requieren reclutamiento infinito. Nuestro método tiene un límite matemático (7 niveles) y está respaldado por una plataforma legal con más de 15 años en el mercado.</p>
+            <div>
+                <a href="https://wa.me/584145818692?text=¡Quiero%20mi%20tarjeta%20digital%20con%20superpoderes!" class="cta-button whatsapp">
+                    📱 Obtener Mi Tarjeta Digital
+                </a>
+                <a href="#demo" class="cta-button demo">
+                    🎬 Ver Demo en Vivo
+                </a>
+                <a href="#premium" class="cta-button premium">
+                    ⭐ Versión Premium
+                </a>
             </div>
             
-            <div class="faq-item">
-                <h3 class="faq-question">¿Realmente solo necesito $2 USD?</h3>
-                <p>Sí, es el único aporte requerido. No hay cuotas mensuales, ni compras obligatorias de productos. Los $2 USD son simbólicos y representan tu compromiso con el proceso.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">¿Qué pasa si no consigo a 4 personas?</h3>
-                <p>Te apoyamos con estrategias probadas para encontrar a esas 4 personas. La mayoría tiene al menos 4 amigos o familiares en quienes confiar. Además, nuestro equipo te brinda herramientas y capacitación para lograrlo.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3 class="faq-question">¿Cuánto tiempo toma ver resultados?</h3>
-                <p>Depende de tu dedicación, pero muchos miembros ven sus primeros ingresos en las primeras semanas. El crecimiento se acelera exponencialmente una vez que tu red comienza a expandirse.</p>
-            </div>
-        </div>
-    </section>
+            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                <strong>Plus Épico:</strong> Cada tarjeta incluye acceso a la plataforma Emprende World para generar ingresos.
+            </p>
+        </section>
 
-<!-- SECCIÓN QR 100% FUNCIONAL -->
-<section style="text-align: center; padding: 50px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-    <div style="max-width: 500px; margin: 0 auto;">
-        <h2 style="font-size: 28px; margin-bottom: 15px;">🚀 ¡Únete a Nuestra Comunidad!</h2>
-        <p style="font-size: 18px; margin-bottom: 30px; opacity: 0.9;">Escanea el código QR para visitarnos</p>
-        
-        <!-- QR FUNCIONAL -->
-        <div style="display: inline-block; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://nuevageneracionemprendedora.netlify.app" 
-                 alt="Código QR - Nueva Generación Emprendedora" 
-                 style="width: 180px; height: 180px; display: block; border-radius: 10px;">
-            <div style="margin-top: 12px; padding: 8px 20px; background: #ff6b6b; color: white; border-radius: 25px; font-size: 14px; font-weight: bold; display: inline-block;">
-                📱 Escanear Aquí
-            </div>
-        </div>
-        
-        <p style="margin-top: 25px; font-size: 16px; line-height: 1.5; opacity: 0.9;">
-            <strong>Comparte este código</strong><br>
-            con emprendedores que quieran crecer
-        </p>
-        
-        <div style="margin-top: 20px;">
-            <button style="background: #ffd93d; color: #333; border: none; padding: 12px 30px; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; margin: 5px;">
-                📤 Compartir
-            </button>
-            <button style="background: transparent; color: white; border: 2px solid white; padding: 12px 30px; border-radius: 25px; font-size: 16px; cursor: pointer; margin: 5px;">
-                🌐 Copiar Enlace
-            </button>
-        </div>
-    </div>
+        <footer>
+            <p>✨ <strong>© 2025 - TuTarjetaDigital - Transformando Conexiones</strong> ✨</p>
+            <p>Tu éxito digital comienza con una tarjeta épica</p
+...
+<p class="copyright">© 2024 Tu Tarjeta Digital. Todos los derechos reservados.</p>
+</div>
+
+<!-- Sección QR de Tarjeta Digital -->
+<section class="section section-light" id="qr-tarjeta">
+    ...
 </section>
-        </div>
-    </section>
 
-    <!-- Final CTA Section -->
-    <section class="final-cta" id="unete">
-        <div class="container">
-            <h2>Tu Momento es Ahora</h2>
-            <p>Cientos de Miles de personas ya descubrieron el poder de este método y cada dia mas lo consiguen como tu hoy!.</p>
-            <a href="#unete" class="cta-button">INICIAR MI VIAJE A LA LIBERTAD FINANCIERA</a>
-            <div style="margin-top: 20px;">
-                <div class="guarantee-badge">COMPROMISO: CUMPLIR LOS EQUISITOS 4 DIRECTOS Y APORTAR 2 DOLARES</div>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="logo">
-                <i class="fas fa-crown"></i>
-            </div>
-            <h3 style="margin-bottom: 20px;">NUEVA GENERACIÓN EMPRENDEDORA</h3>
-            <p>El club donde tu éxito es nuestra misión</p>
-            
-            <div class="footer-links">
-                <a href="#metodo">El Método</a>
-                <a href="#unete">Únete</a>
-                <a href="#qr-share">Compartir</a>
-                <a href="#">Contacto</a>
-                <a href="#">Términos</a>
-                <a href="#">Privacidad</a>
-            </div>
-            
-            <p class="copyright">© 2024 Nueva Generación Emprendedora. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Simple animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.card, .step, .benefit, .testimonial').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
-    </script>
+                                                                  
+        </footer>
+    </div>
 </body>
 </html>
-
-
-
-
-
