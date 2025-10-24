@@ -1,644 +1,229 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Tarjeta Digital - Evoluciona Tu Forma de Conectar</title>
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        body <!-- CABECERA PROMOCIONAL - PEGAR AL PRINCIPIO DEL BODY -->
-<header style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 0; text-align: center; border-bottom: 3px solid #ff00ff;">
-    <img src="https://github.com/elispastorst/tutarjetadigital/raw/62c947c92bf9abf5eb7c34a8b452907acfa8ec93/TTD2_g24_A2PROMOCION.png" 
-         alt="Promoción Especial" 
-         style="width: 100%; max-width: 500px; display: block; margin: 0 auto;">
-</header>{ 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tu Tarjeta Digital - Evoluciona Tu Forma de Conectar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        .container { 
-            max-width: 100%; 
-            margin: 0 auto; 
-            padding: 15px; 
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-        /* Header mejorado con imagen */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
+    /* ===== MENÚ SUPERIOR ===== */
+    nav {
+      background: rgba(30, 60, 114, 0.95);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
-        .header-image {
-            width: 100%;
-            max-width: 400px;
-            height: 200px;
-            background: linear-gradient(135deg, #1e3c72, #25D366);
-            border-radius: 15px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: #1e3c72;
-            line-height: 1.3;
-        }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 25px;
-        }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
 
-        /* Alert de urgencia */
-        .alert {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            font-weight: bold;
-            color: #856404;
-        }
+    .nav-links a:hover {
+      color: #00ffff;
+    }
 
-        /* NUEVA SECCIÓN: BENEFICIOS ÉPICOS */
-        .benefits-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 40px 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        .benefits-section h2 {
-            color: #1e3c72;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 25px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #25D366;
-            text-align: left;
-        }
-
-        .benefit-card h3 {
-            margin-bottom: 12px;
-            color: #1e3c72;
-            font-size: 1.2rem;
-        }
-
-        .benefit-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* NUEVA SECCIÓN: CÓDIGO QR */
-        .qr-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            padding: 40px 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .qr-container {
-            max-width: 300px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .qr-placeholder {
-            width: 200px;
-            height: 200px;
-            background: #f5f5f5;
-            border: 2px dashed #25D366;
-            border-radius: 10px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-weight: bold;
-        }
-
-        .qr-instructions {
-            margin-top: 20px;
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Features mejoradas */
-        .features {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 25px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #25D366;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 12px;
-            color: #1e3c72;
-            font-size: 1.3rem;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* Caso de éxito */
-        .testimonial {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px 0;
-            text-align: center;
-            font-style: italic;
-            color: #555;
-            border: 2px dashed #25D366;
-        }
-
-        /* CTA mejorado */
-        .cta-section {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(255,255,255,0.95);
-            border-radius: 20px;
-            margin: 30px 0;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 300px;
-            margin: 15px auto;
-            padding: 18px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-        }
-
-        .whatsapp { 
-            background: #25D366; 
-            color: white; 
-        }
-
-        .demo { 
-            background: #1e3c72; 
-            color: white; 
-        }
-
-        .premium {
-            background: linear-gradient(135deg, #ff6b6b, #ffa726);
-            color: white;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (min-width: 768px) {
-            .container {
-                max-width: 700px;
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .features, .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .cta-button {
-                display: inline-block;
-                width: auto;
-                margin: 10px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1000px;
-            }
-            
-            .features, .benefits-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TU_ID_AQUI"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2K199E34HV');
-    </script>
-</head>
-<body>
-   <!-- Hero Section -->
-<section class="hero-section" style="
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #f9fafc 0%, #f0f4ff 100%);
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-    margin: 40px auto;
-    max-width: 900px;
-">
-    <div style="
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: rgba(30, 60, 114, 0.95);
         width: 100%;
-        max-width: 700px;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    ">
-      <div style="max-width: 700px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-  <img src="https://raw.githubusercontent.com/elispastorst/tutarjetadigital/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png"
-       alt="Tu Tarjeta Digital - Portada Principal"
-       style="width: 100%; height: auto; display: block; border-radius: 16px;">
-</div>
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 15px 0;
+      }
 
+      .nav-links.active {
+        display: flex;
+      }
 
+      .hamburger {
+        display: flex;
+      }
+    }
 
-    <h1 style="
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1e3a8a;
-        margin-top: 35px;
-        line-height: 1.3;
-    ">
-        ¿Tu Presencia Digital Podría Desaparecer Mañana Mismo?
-    </h1>
+    /* ===== SECCIONES ===== */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-    <p style="
-        font-size: 1.1rem;
-        color: #4b5563;
-        margin-top: 15px;
-        max-width: 650px;
-    ">
-        Facebook, YouTube, Instagram y TikTok pueden cerrar tu cuenta en segundos... y perderías todo.
-    </p>
+    h1, h2 {
+      color: #1e3c72;
+    }
 
-    <div style="
-        background-color: #fff7ed;
-        color: #92400e;
-        font-weight: 600;
-        padding: 12px 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        display: inline-block;
-        border: 1px solid #fcd34d;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.05);
-    ">
-        ⚠️ NO DEPENDAS MÁS DE PLATAFORMAS QUE CONTROLAN TU DESTINO
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #1e3c72;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #00bcd4;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      background: #1e3c72;
+      color: white;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    // Cerrar menú después de hacer clic en un enlace
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll('.nav-links a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          document.querySelector('.nav-links').classList.remove('active');
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- ===== MENÚ ===== -->
+  <nav>
+    <div class="nav-logo">🌐 Tu Tarjeta Digital</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
     </div>
-</section>
-
-            </header>
-
-        <!-- NUEVA SECCIÓN: BENEFICIOS ASOMBROSOS -->
-        <section class="benefits-section">
-            <h2>🚀 LA EVOLUTION DIGITAL HA LLEGADO</h2>
-            <p>Tu tarjeta digital no es solo un contacto... es tu MINI-SITIO WEB personal con superpoderes</p>
-             <div class="benefits-grid">
-   <!-- SECCIÓN TARJETAS CLIENTES - PEGAR AL COMIENZO -->
-<section style="background: #f8f9fa; padding: 30px 20px; text-align: center; border-bottom: 2px solid #667eea;">
-    <h2 style="color: #333; margin-bottom: 10px; font-size: 22px; font-weight: bold;">
-        Nuestras Tarjetas Digitales
-    </h2>
-    <p style="color: #666; margin-bottom: 25px; font-size: 16px;">
-        Explora nuestros diseños más recientes para clientes
-    </p>
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 400px; margin: 0 auto;">
-        <a href="https://nuevageneracionemprendedora.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            🚀 Nueva Generación Emprendedora
-        </a>
-        <a href="https://electroembobinadosherver.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            ⚡ Electroembobinados Herver
-        </a>
-        <a href="https://acarreosyviajeselias.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            🚚 Acarreos y Viajes Elías
-        </a>
-        <a href="https://electromundial.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            💡 Electromundial
-        </a>
-        <a href="https://multiservicioautomotrizcs.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            🔧 Multiservicio Automotriz C.S.
-        </a>
-        <a href="https://antunezjrysuparrandavallenata.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            🎵 Antúnez Jr y su Parranda Vallenata
-        </a>
-        <a href="https://ozonosol.netlify.app" target="_blank" style="display: block; background: white; padding: 15px; border-radius: 10px; text-decoration: none; color: #333; border: 2px solid #e9ecef; transition: all 0.3s ease; font-weight: 500; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-            🌿 Ozonosol
-        </a>
-        <!-- Espacio entre secciones -->
-<div style="height: 60px;"></div>
-
-    <!-- Sección Oferta Especial con botón de vista ampliada -->
-<div class="oferta-especial" style="text-align: center; margin-top: 40px;">
-  <h2 style="color: #00ffff; text-shadow: 0 0 8px #0077ff;">🚀 OFERTA ESPECIAL 🚀</h2>
-  <p style="color: white; font-size: 1.1em;">¡Tu Tarjeta Digital Profesional por Tiempo Limitado!</p>
-
-  <img id="ofertaImg" src="https://github.com/elispastorst/tutarjetadigital/blob/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png?raw=true" 
-       alt="Oferta Especial Tu Tarjeta Digital"
-       style="max-width: 90%; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.5); cursor: pointer;">
-
-  <br>
-  <button onclick="abrirModal()" 
-          style="margin-top: 15px; background-color: #00bcd4; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
-    🔍 Ver imagen completa
-  </button>
-</div>
-
-<!-- Modal (ventana emergente) -->
-<div id="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.85);">
-  <span onclick="cerrarModal()" 
-        style="position:absolute; top:20px; right:40px; color:white; font-size:40px; font-weight:bold; cursor:pointer;">&times;</span>
-  <img src="https://github.com/elispastorst/tutarjetadigital/blob/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png?raw=true"
-       style="display:block; margin:auto; margin-top:50px; max-width:90%; max-height:85%; border-radius:12px;">
-</div>
-
-<!-- Script para abrir/cerrar -->
-<script>
-  function abrirModal() {
-    document.getElementById('modal').style.display = 'block';
-  }
-  function cerrarModal() {
-    document.getElementById('modal').style.display = 'none';
-  }
-</script>
-
-        <p style="color: #fff; margin-top: 20px; font-size: 14px; text-shadow: 0 0 5px #00ff00;">
-            ⚡ Oferta válida por tiempo limitado ⚡
-        </p>
+    <div class="nav-links">
+      <a href="#inicio">Inicio</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#muestras">Muestras</a>
+      <a href="#oferta">Oferta</a>
+      <a href="#qr-tarjeta">Código QR</a>
+      <a href="#contacto">Contacto</a>
     </div>
-</section>
+  </nav>
 
-<style>
-    /* EFECTOS NEON INTERACTIVOS */
-    @keyframes neon-glow {
-        0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; }
-        50% { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 25px #ff00ff; }
-    }
-    
-    @keyframes button-pulse {
-        0%, 100% { box-shadow: 0 0 15px #ff00ff; transform: scale(1); }
-        50% { box-shadow: 0 0 25px #00ffff, 0 0 35px #ff00ff; transform: scale(1.05); }
-    }
-    
-    h2 {
-        animation: neon-glow 2s ease-in-out infinite;
-    }
-    
-    section a:hover {
-        animation: button-pulse 0.5s ease-in-out infinite;
-        background: linear-gradient(45deg, #00ffff, #ff00ff) !important;
-    }
-</style>
-</section>
-
-<style>
-    /* Efectos hover */
-    section a:hover {
-        background: #667eea !important;
-        color: white !important;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
-        border-color: #667eea !important;
-    }
-</style>
-                <div class="benefit-card">
-                    <h3>📱 NUNCA MÁS TE QUEDARÁS SIN TARJETAS</h3>
-                    <p>Olvídate de imprimir, perder o quedarte sin tarjetas. Tu tarjeta digital vive en tu celular y se comparte EN SEGUNDOS.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🎬 CATÁLOGOS Y VIDEOS EN TU TARJETA</h3>
-                    <p>Muestra tus productos, servicios o talento con imágenes, videos y enlaces directos. ¡Convierte tu tarjeta en tu mejor vendedor!</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>💸 GENERA INGRESOS AUTOMÁTICOS</h3>
-                    <p>Vinculada con EMPRENDE WORLD: cada tarjeta puede generar comisiones por referidos y ventas. ¡Ganas tú y ganan tus clientes!</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🔄 ACTUALIZACIÓN INSTANTÁNEA</h3>
-                    <p>¿Cambiaste de número? ¿Nuevo servicio? Actualiza UNA VEZ y todos tus contactos tendrán tu información actualizada AL INSTANTE.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🌐 TU MINI-WEBSITE PERSONAL</h3>
-                    <p>Más que una tarjeta: es tu presencia digital completa. Incluye redes sociales, sitios web, promociones y MUCHO MÁS.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>✅ AUTORIZADO POR EMPRENDE WORLD</h3>
-                    <p>Usa la misma plataforma que impulsa a cientos de emprendedores. Totalmente compatible y aprobado por los administradores.</p>
-                </div>
-                
-                <!-- NUEVA VENTAJA COMPETITIVA -->
-                <div class="benefit-card" style="border-left-color: #ff6b6b;">
-                    <h3>⚡ VENTAJA COMPETITIVA INMEDIATA</h3>
-                    <p><strong>Ya no es opción, es NECESIDAD:</strong> En un mundo donde el 90% busca todo con su teléfono, quienes no estén digitalizados DESAPARECERÁN. Sé pionero y domina el futuro.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NUEVA SECCIÓN: CÓDIGO QR -->
-        <section class="qr-section">
-            <h2>📲 COMPARTE ESTA EVOLUTION DIGITAL</h2>
-            <p>Escanea el código QR y comparte esta oportunidad con tus contactos</p>
-            
-            <div class="qr-container">
-                <div class="qr-placeholder">
-                    [Comparte nuestra TARJETA DIGITAL CON TUS AMIGOS Y GANA al final abajo]
-                </div>
-                <h3>¡Comparte la Evolution Digital!</h3>
-                <p class="qr-instructions">
-                    <strong>Instrucciones:</strong><br>
-                    1. Toma una captura de este código QR - al final abajo<br>
-                    2. Compártelo en tus redes sociales<br>
-                    3. Envía a tus contactos por WhatsApp<br>
-                    4. ¡Sé parte del cambio digital!
-                </p>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>🏠 Tu Casa Digital Propia</h3>
-                <p><strong>Dominio personal + hosting profesional.</strong> Tu comunidad te encuentra DIRECTAMENTE, sin algoritmos de por medio.</p>
-            </div>
-            
-            <div class="feature-card">
-                <h3>💰 Tu Comunidad Gana Contigo</h3>
-                <p><strong>Sistema de ingresos compartidos:</strong> Tus seguidores ganan registrándose y tú recibes comisiones automáticas.</p>
-            </div>
-            
-            <div class="feature-card">
-                <h3>🛡️ Protección Total</h3>
-                <p><strong>Cero riesgo de bloqueos.</strong> Tu contenido y comunidad están seguros en tu propio espacio digital.</p>
-            </div>
-        </section>
-
-        <div class="testimonial">
-            "Perdí 50K seguidores en Instagram por un bloqueo injusto. Ahora tengo mi sitio propio y mi comunidad está más unida que nunca."
-            <br><strong>- Carlos M., Creador de Contenido</strong>
-        </div>
-
-        <section class="cta-section">
-            <h2>Tu Momento de Cambio es HOY</h2>
-            <p>Más de 200 creadores y emprendedores ya tienen su tarjeta digital épica</p>
-            
-            <div>
-                <a href="https://wa.me/+3181739930?text=¡Quiero%20mi%20tarjeta%20digital%20con%20superpoderes!" class="cta-button whatsapp">
-                    📱 Obtener Mi Tarjeta Digital
-                </a>
-                <a href="#demo" class="cta-button demo">
-                    🎬 Ver Demo en Vivo
-                </a>
-                <a href="#premium" class="cta-button premium">
-                    ⭐ Versión Premium
-                </a>
-            </div>
-            
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                <strong>Plus Épico:</strong> Cada tarjeta incluye acceso a la plataforma Emprende World para generar ingresos.
-            </p>
-        </section>
-...
-</div>
-
-<!-- Sección QR de Tarjeta Digital -->
-<section class="section section-light" id="qr-tarjeta">
-    <div class="container" style="text-align: center;">
-        <h2 class="section-title">Guarda y Comparte Nuestra Tarjeta Digital</h2>
-        <p class="section-subtitle">
-            Escanea el siguiente código para acceder fácilmente a nuestra tarjeta digital.  
-            ¡Guárdalo en tu galería y compártelo con todos para que también se beneficien de esta gran oportunidad!
-        </p>
-
-        <div style="
-            background: white;
-            display: inline-block;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        ">
-            <img src="https://github.com/elispastorst/tutarjetadigital/blob/5fa0cb3b2c2297fb2aff269edec7bb38e3b7b8d6/mi%20codigo%20qr%20permanente.png?raw=true" 
-                 alt="Código QR - Tarjeta Digital" 
-                 style="max-width: 250px; width: 100%; border-radius: 15px;">
-        </div>
-
-        <p style="margin-top: 25px; color: #2d3748; font-weight: 500;">
-            <i class="fas fa-link" style="color: #d69e2e;"></i>
-            <a href="https://tutarjetadigital.netlify.app/" target="_blank" 
-               style="color: #1a365d; text-decoration: none; font-weight: bold;">
-                https://tutarjetadigital.netlify.app/
-            </a>
-        </p>
-
-        <div class="guarantee-badge" style="margin-top: 15px;">
-            💛 COMPÁRTE ESTE CÓDIGO Y GENERA INGRESOS PASIVOS 💛
-        </div>
+  <!-- ===== INICIO ===== -->
+  <section id="inicio" style="background:#f9fafc;">
+    <img src="https://raw.githubusercontent.com/elispastorst/tutarjetadigital/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png"
+      alt="Tu Tarjeta Digital" style="width:100%;max-width:600px;border-radius:12px;">
+    <h1>¿Tu Presencia Digital Podría Desaparecer Mañana?</h1>
+    <p>Facebook, YouTube, Instagram y TikTok pueden cerrar tu cuenta en segundos... y perderías todo.</p>
+    <div style="background:#fff7ed;color:#92400e;font-weight:bold;padding:10px;border-radius:10px;margin-top:10px;">
+      ⚠️ NO DEPENDAS MÁS DE PLATAFORMAS QUE CONTROLAN TU DESTINO
     </div>
-</section>
+  </section>
 
-<!-- Footer único y bien ubicado -->
-<footer style="text-align: center; background: #1e3c72; color: white; padding: 30px 20px; margin-top: 40px;">
+  <!-- ===== BENEFICIOS ===== -->
+  <section id="beneficios" style="background:white;">
+    <h2>🚀 LA EVOLUTION DIGITAL HA LLEGADO</h2>
+    <p>Tu tarjeta digital no es solo un contacto... es tu MINI-SITIO WEB personal con superpoderes</p>
+  </section>
+
+  <!-- ===== MUESTRAS ===== -->
+  <section id="muestras" style="background:#f8f9fa;">
+    <h2>🌟 Nuestras Tarjetas Digitales</h2>
+    <p>Explora nuestros diseños más recientes para clientes</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:10px;max-width:400px;margin:0 auto;">
+      <a href="https://nuevageneracionemprendedora.netlify.app" target="_blank">🚀 Nueva Generación Emprendedora</a>
+      <a href="https://electroembobinadosherver.netlify.app" target="_blank">⚡ Electroembobinados Herver</a>
+      <a href="https://acarreosyviajeselias.netlify.app" target="_blank">🚚 Acarreos y Viajes Elías</a>
+      <a href="https://electromundial.netlify.app" target="_blank">💡 Electromundial</a>
+      <a href="https://multiservicioautomotrizcs.netlify.app" target="_blank">🔧 Multiservicio Automotriz C.S.</a>
+    </div>
+  </section>
+
+  <!-- ===== OFERTA ===== -->
+  <section id="oferta" style="background:linear-gradient(135deg,#667eea,#764ba2);color:white;">
+    <h2>🚀 OFERTA ESPECIAL</h2>
+    <p>¡Tu Tarjeta Digital Profesional por Tiempo Limitado!</p>
+    <img src="https://github.com/elispastorst/tutarjetadigital/blob/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png?raw=true"
+      alt="Oferta Especial" style="max-width:90%;border-radius:12px;box-shadow:0 0 15px rgba(0,0,0,0.5);">
+    <p style="margin-top:20px;font-weight:bold;">⚡ Oferta válida por tiempo limitado ⚡</p>
+  </section>
+
+  <!-- ===== QR ===== -->
+  <section id="qr-tarjeta" style="background:white;">
+    <h2>📲 Comparte Nuestra Tarjeta Digital</h2>
+    <img src="https://github.com/elispastorst/tutarjetadigital/blob/5fa0cb3b2c2297fb2aff269edec7bb38e3b7b8d6/mi%20codigo%20qr%20permanente.png?raw=true"
+      alt="Código QR" style="max-width:250px;border-radius:15px;">
+    <p><a href="https://tutarjetadigital.netlify.app/" target="_blank" style="color:#1e3c72;font-weight:bold;">https://tutarjetadigital.netlify.app/</a></p>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" style="background:#fff;">
+    <h2>Tu Momento de Cambio es HOY</h2>
+    <a href="https://wa.me/+3181739930?text=¡Quiero%20mi%20tarjeta%20digital!" class="cta-button">📱 Obtener Mi Tarjeta Digital</a>
+    <a href="#muestras" class="cta-button">🎬 Ver Demo en Vivo</a>
+    <a href="#oferta" class="cta-button">⭐ Versión Premium</a>
+  </section>
+
+  <footer>
     <p>© 2025 Tu Tarjeta Digital. Todos los derechos reservados.</p>
     <p>✨ Transformando conexiones y creando presencia digital épica ✨</p>
-</footer>
-
+  </footer>
 </body>
 </html>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
