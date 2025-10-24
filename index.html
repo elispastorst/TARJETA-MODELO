@@ -147,6 +147,18 @@
       color: #2a5298;
       margin-bottom: 10px;
     }
+
+    .neon-text {
+      color: #00ffff;
+      font-weight: bold;
+      text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+      animation: neonPulse 1.5s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      from { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff; }
+      to { text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 45px #00ffff; }
+    }
   </style>
 
   <script>
@@ -227,7 +239,10 @@
     <p>¡Tu Tarjeta Digital Profesional por Tiempo Limitado!</p>
     <img src="https://github.com/elispastorst/tutarjetadigital/blob/6fbfea7317addbc5e47afb8f4b25fa3aa583a522/g2.png?raw=true"
       alt="Oferta Especial" style="max-width:90%;border-radius:12px;box-shadow:0 0 15px rgba(0,0,0,0.5);">
-    <p style="margin-top:20px;font-weight:bold;">⚡ Oferta válida por tiempo limitado ⚡</p>
+    <p class="neon-text" style="margin-top:20px;font-size:1.4rem;">
+      💥 Solo $60.000 al año — Tu Tarjeta Digital Profesional 💥
+    </p>
+    <p style="margin-top:10px;font-weight:bold;">⚡ Oferta válida por tiempo limitado ⚡</p>
   </section>
 
   <section id="qr-tarjeta" style="background:white;">
@@ -239,6 +254,7 @@
 
   <section id="contacto" style="background:#fff;">
     <h2>Tu Momento de Cambio es HOY</h2>
+    <p class="neon-text" style="font-size:1.3rem;">💎 Solo $60.000 al año — Plan Profesional 💎</p>
     <a href="https://wa.me/573181739930?text=¡Quiero%20mi%20tarjeta%20digital!" class="cta-button">📱 Obtener Mi Tarjeta Digital</a>
     <a href="#muestras" class="cta-button">🎬 Ver Demo en Vivo</a>
     <a href="#oferta" class="cta-button">⭐ Versión Premium</a>
@@ -246,7 +262,4 @@
 
   <footer>
     <p>© 2025 Tu Tarjeta Digital. Todos los derechos reservados.</p>
-    <p>✨ Transformando conexiones y creando presencia digital épica ✨</p>
-  </footer>
-</body>
-</html>
+    <p>✨ Transformando conexiones y creando presencia
